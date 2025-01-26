@@ -1,4 +1,5 @@
 ## blink pin 5,scl,sda in order :3
+## RENAME TO CODE.PY WHENEVER YOU WANT TO RUN IT. CIRCUIT PYTHON ONLY ACCEPTS FILES WITH THE NAME
 import time
 import digitalio
 import board
