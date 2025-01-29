@@ -5,16 +5,18 @@ import math
 #Pin A3 is a pwm output
 Pin_generator = digitalio.DigitalInOut(board.D5)
 Pin_generator.direction = digitalio.Direction.OUTPUT
-frequency = 10
-
+frequency = 52.5
+period = 1/frequency
 
 ## Turns a designated digital pin into a PWM pin the goal cannot be over 3.3V pin should be a digital pin variable
-def ADC (goal,pin):
+def ADC (goal):
     ratio = goal/3.3
-    pin.value = True
-    time.sleep(ratio*frequency)
-    pin.value = False
-    time.sleep((1-ratio)*frequency)
+    global Pin_generator
+    Pin_generator.value = True
+    time.sleep(ratio*period)
+    Pin_generator.value = False
+    time.sleep((1-ratio)*period)
+
 
 while True:
-    ADC(1.7,Pin_generator)
+    ADC(1.7)
