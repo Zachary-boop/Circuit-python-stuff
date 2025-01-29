@@ -19,4 +19,6 @@ def ADC (goal):
 
 
 while True:
-    ADC(1.7)
+    # for i in range (360):
+    #   x=i*(math.pi/180)
+    #   ADC(math.sin(x))
